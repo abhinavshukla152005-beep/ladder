@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ladder demo</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: radial-gradient(1200px 600px at 20% -10%, #14202b 0%, #0a0e13 55%, #070a0e 100%);
+    font-family: Consolas, "Cascadia Mono", "DejaVu Sans Mono", monospace;
+    padding: 22px;
+  }
+  #term {
+    height: 100%;
+    border: 1px solid #1d2a36;
+    border-radius: 12px;
+    background: rgba(9, 13, 18, .92);
+    box-shadow: 0 24px 70px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  #bar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 14px; background: #101821;
+    border-bottom: 1px solid #1b2836;
+    font-size: 13px; color: #7f93a6;
+  }
+  .dot { width: 11px; height: 11px; border-radius: 50%; }
+  #bar .t { margin-left: 8px; letter-spacing: .04em; }
+  #lines {
+    flex: 1; overflow-y: auto; padding: 16px 22px 18px; margin: 0;
+    font-size: 15.5px; line-height: 1.6; scrollbar-width: none;
+  }
+  #lines::-webkit-scrollbar { display: none; }
+  .ln { white-space: pre-wrap; word-break: break-word; color: #cfdae5; }
+  .cmd { color: #8fd1ff; }
+  .h1  { color: #ffffff; font-weight: 700; font-size: 29px; line-height: 1.35; margin: 6px 0 2px; letter-spacing: .01em; }
+  .sub { color: #7f93a6; font-size: 14px; }
+  .h2  { color: #ffb86b; font-weight: 700; margin-top: 12px; font-size: 17px; }
+  .rule { color: #23384a; }
+  .dim { color: #6d8296; }
+  .red { color: #ff7a7a; }
+  .green { color: #6ee7a8; }
+  .hl { color: #8fd1ff; }
+  .cur { display: inline-block; width: 9px; height: 16px; background: #7fd0ff; vertical-align: -2px; margin-left: 5px; }
+</style>
+</head>
+<body>
+<div id="term">
+  <div id="bar">
+    <span class="dot" style="background:#ff5f57"></span>
+    <span class="dot" style="background:#febc2e"></span>
+    <span class="dot" style="background:#28c840"></span>
+    <span class="t">ladder — python -m ladder.demo</span>
+  </div>
+  <div id="lines"></div>
+</div>
+<script>
+  const lines = document.getElementById('lines');
+  window.addLine = (cls, text) => {
+    const old = lines.querySelector('.cur');
+    if (old) old.remove();
+    const d = document.createElement('div');
+    d.className = 'ln ' + cls;
+    d.textContent = text;
+    const cur = document.createElement('span');
+    cur.className = 'cur';
+    d.appendChild(cur);
+    lines.appendChild(d);
+    lines.scrollTop = lines.scrollHeight;
+  };
+  window.clearTerm = () => { lines.innerHTML = ''; };
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+src/ladder/__pycache__/
+__pycache__/
+*.pyc
+.venv/
+demo/state.json
+.pytest_cache/
+video/frames/
+*.mp4
+video/timeline.json
+demo/state.json

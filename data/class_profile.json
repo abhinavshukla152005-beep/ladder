@@ -1,0 +1,12 @@
+{
+  "grade_name": "Grade 6 science, mixed-ability government school class",
+  "target_grade": 6,
+  "reading_range": [3, 8],
+  "language": "Hindi",
+  "class_size": 48,
+  "constraints": [
+    "no printing budget, one phone per group",
+    "teacher has 40 minutes of class time",
+    "some learners read three grades below the textbook"
+  ]
+}
