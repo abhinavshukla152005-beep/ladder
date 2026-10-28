@@ -5,6 +5,8 @@
 Built with the [Strands Agents SDK](https://strandsagents.com) on Amazon Bedrock for the
 AWS Builder Center hackathon *Strands SDK: Workshop to Ship* (October 2026), Education focus area.
 
+[72-second demo](https://youtu.be/aoFbngpUhP8) · [Project write-up](https://builder.aws.com/content/3LIzyXgNwd06SXd5hM85uHcqxrY/one-chapter-fifteen-verified-practice-items-one-phone)
+
 ---
 
 ## The problem
